@@ -21,9 +21,10 @@ class Server():
 
     @app.route("/v2/move", methods=['POST'])
     def move():
-        axis_name = request.form['axis_name']
-        axis_value = request.form['axis_value']
-        controller_type = request.form['controller_type']
+      data = request.json()
+      axis_name = data['axis_name']
+      axis_value = data['axis_value']
+      controller_type = data['controller_type']
 
       output = self.m.move_robot(
         axis_name=axis_name,
