@@ -1,0 +1,14 @@
+[Unit]
+Description=A Robot Web Controller
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/bin/python3.5 -m gunicorn -w 4 -b <IPADDR>:<PORT> <MODULE_PATH>:app
+
+[Install]
+WantedBy=multi-user.target
