@@ -33,7 +33,7 @@ class Server():
       return Response(output, mimetype='text/HTML')
 
     @app.route("/v2sandbox/move", methods=['POST'])
-    def move():
+    def move_sandbox():
       data = request.json()
       axis_name = data['axis_name']
       axis_value = data['axis_value']
