@@ -31,7 +31,7 @@ class Server():
         controller_type=controller_type)
       return Response(output, mimetype='text/HTML')
 
-  return app
+    return app
 
 s = Server()
 app = s.start_webserver()
