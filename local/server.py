@@ -21,27 +21,14 @@ class Server():
 
     @app.route("/v2/move", methods=['POST'])
     def move():
-      data = request.json
-      axis_name = data['axis_name']
-      axis_value = data['axis_value']
-      controller_type = data['controller_type']
+        axis_name = request.form['axis_name']
+        axis_value = request.form['axis_value']
+        controller_type = request.form['controller_type']
 
       output = self.m.move_robot(
         axis_name=axis_name,
         axis_value=float(axis_value),
         controller_type=controller_type)
-      return Response(output, mimetype='text/HTML')
-
-    @app.route("/v2sandbox/move", methods=['POST'])
-    def move_sandbox():
-      data = request.json
-      axis_name = data['axis_name']
-      axis_value = data['axis_value']
-      controller_type = data['controller_type']
-
-      output = "axis_name: {}, axis_value: {}".format(
-        axis_name,
-        float(axis_value))
       return Response(output, mimetype='text/HTML')
 
     return app
