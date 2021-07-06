@@ -40,8 +40,8 @@ class Server():
       controller_type = data['controller_type']
 
       output = "axis_name: {}, axis_value: {}".format(
-        axis_name=axis_name,
-        axis_value=float(axis_value))
+        axis_name,
+        axis_value)
       return Response(output, mimetype='text/HTML')
 
     return app
