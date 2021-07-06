@@ -21,7 +21,7 @@ class Server():
 
     @app.route("/v2/move", methods=['POST'])
     def move():
-      data = request.json()
+      data = request.form
       axis_name = data['axis_name']
       axis_value = data['axis_value']
       controller_type = data['controller_type']
