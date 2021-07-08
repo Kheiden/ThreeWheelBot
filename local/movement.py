@@ -64,6 +64,12 @@ class Movement():
         self.direction = 'backwards'
         self.signal = GPIO.HIGH
         self.speed_percentage = (axis_value+self.deadzone_threshold)*(100)*-1
+      else:
+        # Between -1*0.10 and 0.10
+        # Stop all motors
+        self.signal = GPIO.LOW
+        self.direction = 'None'
+        self.speed_percentage = 0
 
       # Update the PWM signal to the dc motor controllwer which will in turn
       # update the dc motors
