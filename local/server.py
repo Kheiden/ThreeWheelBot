@@ -1,5 +1,6 @@
 from flask import Flask, Response
 from flask import request
+from flask_cors import cross_origin
 
 import movement
 
@@ -20,6 +21,7 @@ class Server():
     app = Flask(__name__)
 
     @app.route("/v2/move", methods=['POST'])
+    @cross_origin()
     def move():
       data = request.form
       axis_name = data['axis_name']
@@ -33,6 +35,7 @@ class Server():
       return Response(output, mimetype='text/HTML')
 
     @app.route("/v2sandbox/move", methods=['POST'])
+    @cross_origin()
     def move_sandbox():
       data = request.form
       axis_name = data['axis_name']
