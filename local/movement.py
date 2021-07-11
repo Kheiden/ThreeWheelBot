@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import state
 import time
-import cv2
 
 class Movement():
 

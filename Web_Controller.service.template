@@ -8,7 +8,8 @@ Type=simple
 Restart=always
 RestartSec=1
 User=pi
-ExecStart=/usr/bin/python3.5 -m gunicorn -w 4 -b <IPADDR>:<PORT> <MODULE_PATH>:app
+ExecStart=/usr/bin/<PYTHONVER> -m gunicorn -w 1 -b <IPADDR>:<PORT> server:app
+WorkingDirectory=/home/pi/ThreeWheelBot/local
 
 [Install]
 WantedBy=multi-user.target
