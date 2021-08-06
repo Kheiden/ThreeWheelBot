@@ -1,0 +1,44 @@
+body { 
+  background: black no-repeat fixed center; 
+}
+p {
+  color: white;
+}
+button {
+    color:yellow;
+    position:fixed;
+    border: none;
+    /* border-radius: 300px / 400px; */
+    color: white;
+    background-color: yellowgreen;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 36px;
+    /* margin: 1px 1px; */
+    cursor: pointer;
+    width:200px; 
+    height:100px; 
+    z-index:0;
+}
+.motors {
+    top:000px; left:000px; width:400px;
+}
+.dark {
+    filter: brightness(75%);
+    /* color:white; */
+}
+.console {
+    background-color:grey; 
+    width:980px; 
+    height:500px; 
+    position:fixed; 
+    top:780px; 
+    left:0px; 
+    font: 15px monospace;
+    display:flex;
+    overflow:auto;
+    overflow-x: auto;
+    flex-direction: column;
+    z-index:3
+}

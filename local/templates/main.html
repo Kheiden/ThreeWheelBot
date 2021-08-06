@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/main.css">
+<script src="scripts/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<body>
+    <button class="motors" onclick="">Motors</button>
+    <button id="1" style="top:100px; left:000px;" onclick="button_select('#1');">Left</button>
+    <button id="2" style="top:100px; left:200px;" onclick="button_select('#2');">Right</button>
+    <button id="3" style="top:000px; left:400px;" onclick="button_select('#3');">+0.20</button>
+    <button id="4" style="top:100px; left:400px;" onclick="button_select('#4');">+0.10</button>
+    <button id="5" style="top:200px; left:400px;" onclick="button_select('#5');">0.00</button>
+    <button id="6" style="top:300px; left:400px;" onclick="button_select('#6');">-0.10</button>
+    <button id="7" style="top:400px; left:400px;" onclick="button_select('#7');">-0.20</button>
+    <button style="top:200px; left:650px; color:red;" onclick="button_clear();">CLEAR</button>
+    <button style="top:500px; left:000px; width:400px; color:red;" onclick="execute();">EXECUTE</button>
+    <button style="color:red; top:500px; left:400px;" onclick="reload_page();">Reload Console</button>
+    <div id="console" class="console">
+        <script>
+            log("Boot up Successful", "INFO")
+            </script>
+    </div>
+</body>
+</html>

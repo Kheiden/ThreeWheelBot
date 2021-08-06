@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import state
 import time
-import cv2
 
 class Movement():
 
@@ -71,7 +70,7 @@ class Movement():
         self.direction = 'None'
         self.speed_percentage = 0
 
-      # Update the PWM signal to the dc motor controllwer which will in turn
+      # Update the PWM signal to the dc motor controller which will in turn
       # update the dc motors
       GPIO.output(self.motor, self.signal)
       output = ''

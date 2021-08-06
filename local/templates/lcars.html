@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="css/lcars.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="scripts/lcars_base.js"></script>
+<script src="scripts/lcars_audio.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<body>
+    <div id="header" class="lcars-row header">
+        <!-- ELBOW -->
+        <div class="lcars-elbow left-bottom lcars-cosmic-bg"></div>
+
+        <!-- BAR WITH TITLE -->
+        <div class="lcars-bar horizontal lcars-cosmic-bg">
+            <div class="lcars-title right">ROBOT WEB CONTROLLER</div>
+        </div>
+
+        <!-- ROUNDED EDGE DECORATED -->
+        <div class="lcars-bar horizontal right-end decorated lcars-cosmic-bg"></div>
+    </div>
+    <div class="lcars-column lcars-u-1"> 
+        <div class="lcars-row"> <div class="lcars-element lcars-u-1 lcars-blue-bell-bg">LEFT</div> </div> 
+        <div class="lcars-row"> <div id="1" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#1');">+0.20</div> </div>
+        <div class="lcars-row"> <div id="2" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#2');">+0.10</div> </div>
+        <div class="lcars-row"> <div id="3" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#3');">+0.05</div> </div>
+        <div class="lcars-row"> <div id="4" class="lcars-element lcars-u-1 lcars-danub-bg" onclick="button_select('#4');"> 0.00</div> </div>
+        <div class="lcars-row"> <div id="5" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#5');">-0.05</div> </div>
+        <div class="lcars-row"> <div id="6" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#6');">-0.10</div> </div>
+        <div class="lcars-row"> <div id="7" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#7');">-0.20</div> </div>
+    </div>
+    <div class="lcars-column lcars-u-1"> 
+        <div class="lcars-row"> <div class="lcars-element lcars-u-1 lcars-blue-bell-bg">BOTH</div> </div> 
+        <div class="lcars-row"> <div id="8" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#8');">+0.20</div> </div>
+        <div class="lcars-row"> <div id="9" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#9');">+0.10</div> </div>
+        <div class="lcars-row"> <div id="10" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#10');">+0.05</div> </div>
+        <div class="lcars-row"> <div id="11" class="lcars-element lcars-u-1 lcars-danub-bg" onclick="button_select('#11');"> 0.00</div> </div>
+        <div class="lcars-row"> <div id="12" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#12');">-0.05</div> </div>
+        <div class="lcars-row"> <div id="13" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#13');">-0.10</div> </div>
+        <div class="lcars-row"> <div id="14" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#14');">-0.20</div> </div>
+    </div>
+    <div class="lcars-column lcars-u-1"> 
+        <div class="lcars-row"> <div class="lcars-element lcars-u-1 lcars-blue-bell-bg">RIGHT</div> </div> 
+        <div class="lcars-row"> <div id="15" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#15');">+0.20</div> </div>
+        <div class="lcars-row"> <div id="16" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#16');">+0.10</div> </div>
+        <div class="lcars-row"> <div id="17" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#17');">+0.05</div> </div>
+        <div class="lcars-row"> <div id="18" class="lcars-element lcars-u-1 lcars-danub-bg" onclick="button_select('#18');"> 0.00</div> </div>
+        <div class="lcars-row"> <div id="19" class="lcars-element lcars-u-1 lcars-pale-canary-bg" onclick="button_select('#19');">-0.05</div> </div>
+        <div class="lcars-row"> <div id="20" class="lcars-element lcars-u-1 lcars-golden-tanoi-bg" onclick="button_select('#20');">-0.10</div> </div>
+        <div class="lcars-row"> <div id="21" class="lcars-element lcars-u-1 lcars-atomic-tangerine-bg" onclick="button_select('#21');">-0.20</div> </div>
+    </div>   
+    <div class="lcars-text-box lcars-u-4" id="console">
+        <script>
+            log("Boot up Successful", "INFO")
+        </script>
+    </div>
+    <p></p>
+    <div class="lcars-row lcars-u-3"> 
+        <div class="lcars-row centered"> <div class="lcars-element lcars-u-3 lcars-red-alert-bg" onclick="execute();">EXECUTE</div> </div> 
+    </div>
+    <p></p>
+    <div class="lcars-row lcars-u-3"> 
+        <div class="lcars-row"> <div class="lcars-element lcars-u-2 lcars-hopbush-bg" onclick="reload_page();">RELOAD CONSOLE</div> </div> 
+    </div>
+    <p></p>
+    <div class="lcars-row lcars-u-1">
+        <div class="lcars-row"> <div class="lcars-element lcars-u-1 lcars-medium-carmine-bg" onclick="lcarsAudio.TactileInputAcknowledge();"> TEST AUDIO</div>
+    </div>
+    </div>
+    <audio id="audDummy"><!--Just leave this here, just needed to enable automatic query canplay in the initialization code to load compatible media types -->
+        <script src="scripts/lcars_audio.js"></script>
+        
+        <script>
+            //All "booted" up notification. 
+            //Many browsers won't play this next sound because the user hasn't "blessed" the action with a UI click yet.
+            document.addEventListener("DOMContentLoaded", function(event) { 
+                lcarsAudio.Ready();
+            });
+        
+            //Cosmetic-ish behavior: scroll to gets hidden by top row body frame, so we need to scroll back slighly to have the actual heading element for each section visible after an in-page navigation.
+            function locationHashChanged() {
+                if (location.hash.substr(-8) == "_section") {
+                    console.info("in-page nav detected.");
+                    setTimeout(function(){window.scrollBy(0,-100)}, 100);
+                }
+            }
+            window.onhashchange = locationHashChanged;
+        
+        </script>
+        </audio>
+</body>
+</html>
