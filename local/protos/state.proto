@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+message Datetime {
+  optional int32 unix_timestamp_seconds = 1;
+  optional int32 unix_timestamp_micros_only = 2;
+}
+
+message NavigationPath {
+  repeated NavigationCommand all_commands = 1;
+}
+
+message NavigationCommand {
+  message Motor {
+    enum MotorType {
+      LEFT_MOTOR = 0;
+      RIGHT_MOTOR = 1;
+      UNKNOWN_MOTOR = 2;
+    }
+    optional MotorType motor_type = 1;
+    optional int32 rpm = 2;
+  }
+
+  repeated Motor all_motors = 1;
+  optional Datetime command_start_time = 2;
+  optional Datetime command_stop_time = 3;
+  optional int32 distance_millimeters = 4;
+  optional int32 wheel_diameter = 5;
+
+  message AngleReference {
+     float horizontal_arc = 1;
+     float vertical_arc = 2;
+  }
+  optional AngleReference angle_from_last_navigation_point = 6;
+  optional int32 speed_from_last_navigation_point_in_mm_per_second = 7;
+}
