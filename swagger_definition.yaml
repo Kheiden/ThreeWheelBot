@@ -7,24 +7,14 @@ servers:
   - url: http://192.168.1.10:5500/v2
     description: Production server (movement sent to motors)
   - url: http://192.168.1.10:5500/v2sandbox
-    description: Sandbox server (movment not sent to motors)
-tags:
-  - name: "move"
-    description: "For controlling the robot"
-    externalDocs:
-      description: "Returns responses, and sends signal to the motors"
-      url: "N/A"
-  - name: "state"
-    description: "Regarding the state of the robot"
-  - name: "server"
-    description: "Controlling the server on the robot"
+    description: Sandbox server (movement not sent to motors)
 paths:
   /move:
     post:
       tags:
       - "movement"
       summary: "Move the robot"
-      description: ""
+      description: "Returns responses, and sends signal to the motors (if applicable)"
       operationId: "moveRobot"
       requestBody:
         description: "axis and controller data"
@@ -40,6 +30,9 @@ paths:
             'text/html':
               schema:
                 type: "string"
+              examples:
+                'example1':
+                  value: "axis_name: 1, axis_value: 0.05"
         '405':
           description: "Invalid input"
 components:
