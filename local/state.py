@@ -1,4 +1,4 @@
-import local.state_pb2
+#import local.state_pb2
 import os.path
 import time
 import glob
@@ -11,7 +11,7 @@ class State():
     self.stopped = None
     self.rotating = None
     self.patrolling = None
-    self.navigation_path = local.state_pb2.NavigationPath()
+    #self.navigation_path = local.state_pb2.NavigationPath()
     self.state_serialized_dir = '/home/pi/ThreeWheelBot/local/states'
 
   def add_path(self):

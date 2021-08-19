@@ -6,7 +6,7 @@ class Movement():
 
     def __init__(self):
       # Inport the robot's state
-      self.state = state.State()
+      #self.state = state.State()
       # Use the pin numbering from the BROADCOM
       GPIO.setmode(GPIO.BCM)
       GPIO.setwarnings(False)
