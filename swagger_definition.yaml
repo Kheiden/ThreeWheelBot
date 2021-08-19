@@ -1,0 +1,54 @@
+openapi: "3.0.3"
+info:
+  title: "ThreeWheelBot API"
+  description: "This is the REST API definition for ThreeWheelBot."
+  version: "1.0.0"
+servers:
+  - url: http://192.168.1.10:5500/v2
+    description: Production server (movement sent to motors)
+  - url: http://192.168.1.10:5500/v2sandbox
+    description: Sandbox server (movement not sent to motors)
+paths:
+  /move:
+    post:
+      tags:
+      - "movement"
+      summary: "Move the robot"
+      description: "Returns responses, and sends signal to the motors (if applicable)"
+      operationId: "moveRobot"
+      requestBody:
+        description: "axis and controller data"
+        content:
+          'application/x-www-form-urlencoded':
+            schema:
+              $ref: '#/components/schemas/Movement'
+        required: True
+      responses:
+        '200':
+          description: "successful operation"
+          content:
+            'text/html':
+              schema:
+                type: "string"
+              examples:
+                'example1':
+                  value: "axis_name: 1, axis_value: 0.05"
+        '405':
+          description: "Invalid input"
+components:
+  schemas:
+    Movement:
+      type: "object"
+      properties:
+        axis_name:
+          type: "number"
+          format: double
+        axis_value:
+          type: "number"
+          format: double
+        controller_type:
+          type: "number"
+          format: int32
+externalDocs:
+  description: "Learn more"
+  url: "https://github.com/Kheiden/ThreeWheelBot"
