@@ -25,7 +25,7 @@ var lcarsAudio = {
 	initialize: function(auDummy) {
 		//Determine browser capability and willingness
 		for (var key in this.audioExtensions) {
-			if (auDummy.canPlayType("static/audio/"+this.audioExtensions[key]) != '') {
+			if (auDummy.canPlayType("audio/"+this.audioExtensions[key]) != '') {
 				auDummy.src = this.audioPath + "ready." + key;
 				//TODO: test it further??
 				console.log(auDummy.src + "   " +auDummy.src.lastIndexOf("."));
