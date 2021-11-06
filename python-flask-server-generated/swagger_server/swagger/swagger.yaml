@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: ThreeWheelBot API
+  description: This is the REST API definition for ThreeWheelBot.
+  version: 1.0.0
+externalDocs:
+  description: Learn more
+  url: https://github.com/Kheiden/ThreeWheelBot
+servers:
+- url: http://192.168.1.23:5500/v2
+  description: Production server (movement sent to motors)
+- url: http://192.168.1.23:5500/v2sandbox
+  description: Sandbox server (movement not sent to motors)
+paths:
+  /move:
+    post:
+      tags:
+      - movement
+      summary: Move the robot
+      description: "Returns responses, and sends signal to the motors (if applicable)"
+      operationId: move_robot
+      requestBody:
+        description: axis and controller data
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Movement'
+            examples:
+              right motor:
+                value:
+                  axis_name: Axis 1
+                  axis_value: 0.05
+                  controller_type: 1
+              left motor:
+                value:
+                  axis_name: Axis 1
+                  axis_value: 0.05
+                  controller_type: 1
+        required: true
+      responses:
+        "200":
+          description: successful operation
+          content:
+            text/html:
+              schema:
+                type: string
+                x-content-type: text/html
+              examples:
+                right motor:
+                  value: motor:26 signal:1 direction:forwards speed_percentage:0.05
+                left motor:
+                  value: motor:24 signal:1 direction:backwards speed_percentage:0.05
+        "405":
+          description: Invalid input
+      x-openapi-router-controller: swagger_server.controllers.movement_controller
+components:
+  schemas:
+    Movement:
+      type: object
+      properties:
+        axis_name:
+          type: string
+        axis_value:
+          type: number
+          format: double
+        controller_type:
+          type: number
+          format: int32
+

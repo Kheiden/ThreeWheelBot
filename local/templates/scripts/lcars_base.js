@@ -154,7 +154,7 @@ function button_press_test() {
       for (var key in api_call_axis) {
         $.ajax({
           type: "POST",
-          url: 'http://192.168.1.23:5500/v2/move',
+          url: 'http://192.168.1.9:5500/v2/move',
           contentType: 'application/x-www-form-urlencoded',
           data: {
               axis_name: key,
