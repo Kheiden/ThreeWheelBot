@@ -13,7 +13,7 @@ var lcarsAudio = {
 		webm:"webm",
 		mp4: "aac"
 	},
-	audioPath: "../audio/",
+	audioPath: "./static/audio/",
 	audioType: "",
 	//Inidividual Sound Element holders
 	audTactInputAcknowledge:    null,
