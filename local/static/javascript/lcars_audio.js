@@ -25,7 +25,7 @@ var lcarsAudio = {
 	initialize: function(auDummy) {
 		//Determine browser capability and willingness
 		for (var key in this.audioExtensions) {
-			if (auDummy.canPlayType("audio/"+this.audioExtensions[key]) != '') {
+			if (auDummy.canPlayType("static/audio/"+this.audioExtensions[key]) != '') {
 				auDummy.src = this.audioPath + "ready." + key;
 				//TODO: test it further??
 				console.log(auDummy.src + "   " +auDummy.src.lastIndexOf("."));
@@ -34,12 +34,12 @@ var lcarsAudio = {
 				break;
 			}
 		}
-		this.audTactInputAcknowledge = new Audio("audio/tactinput_acknowledge." + this.audioType);
-		this.audTactInputAltAcknowledge = new Audio("audio/tactinput_alt_acknowledge." + this.audioType);
-		this.audTactInputNegAcknowledge = new Audio("audio/tactinput_neg_acknowledge." + this.audioType);
-		this.audAlert = new Audio("audio/alert." + this.audioType);
-		this.audRedAlert = new Audio("audio/red_alert." + this.audioType);
-		this.audReady = new Audio("audio/ready." + this.audioType);
+		this.audTactInputAcknowledge = new Audio("static/audio/tactinput_acknowledge." + this.audioType);
+		this.audTactInputAltAcknowledge = new Audio("static/audio/tactinput_alt_acknowledge." + this.audioType);
+		this.audTactInputNegAcknowledge = new Audio("static/audio/tactinput_neg_acknowledge." + this.audioType);
+		this.audAlert = new Audio("static/audio/alert." + this.audioType);
+		this.audRedAlert = new Audio("static/audio/red_alert." + this.audioType);
+		this.audReady = new Audio("static/audio/ready." + this.audioType);
 
 		//Actual Standard Wire-up steps
 		var button_list = document.querySelectorAll("#container div.lcars-element.button, div.lcars-app-container div.lcars-element.button");
