@@ -1,5 +1,6 @@
 from flask import Flask, Response
 from flask import request
+from flask import render_template
 from flask_cors import cross_origin
 
 import movement
@@ -46,6 +47,10 @@ class Server():
         axis_name,
         axis_value)
       return Response(output, mimetype='text/HTML')
+
+    @app.route("/lcars", methods=['GET'])
+    def serve_frontend():
+      return render_template('lcars.html')
 
     return app
 
